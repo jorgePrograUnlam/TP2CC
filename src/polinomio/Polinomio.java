@@ -1,3 +1,4 @@
+package polinomio;
 import java.text.DecimalFormat;
 
 public class Polinomio {
@@ -88,7 +89,7 @@ public class Polinomio {
 
 	// almacenando las potencias de X ya calculadas
 	// eficiencia O(N)
-	double evaluarProgDinamica(double x) {
+	public double evaluarProgDinamica(double x) {
 
 		double resultado = 0;
 		double potenciaAcumalativaDeX = 1;
@@ -105,7 +106,7 @@ public class Polinomio {
 	// que ejecute en un tiempo menor que al anterior
 	// con la misma complejidad
 	// eficiencia O(N)
-	double evaluarMejorada(double x) {
+	public double evaluarMejorada(double x) {
 
 		double resultado = coeficientes[grado];
 		double potenciaAcumalativaDeX = x;
@@ -120,7 +121,7 @@ public class Polinomio {
 	}
 
 	// eficiencia O(N)
-	double evaluarPow(double x) {
+	public double evaluarPow(double x) {
 
 		double sumadorDeTerminos = 0;
 		// O(N) 0...N
@@ -135,7 +136,7 @@ public class Polinomio {
 	}
 
 	// eficiencia O(N)
-	double evaluarHorner(double x) {
+	public double evaluarHorner(double x) {
 
 		double resultado = 0;
 		for (int i = 0; i < this.coeficientes.length; i++)

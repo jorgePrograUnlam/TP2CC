@@ -1,4 +1,4 @@
-
+package polinomio;
 public class BinomioDeNewton {
 
 	// Binomio de la forma (ax + b)^n
