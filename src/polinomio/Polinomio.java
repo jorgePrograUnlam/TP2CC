@@ -90,15 +90,18 @@ public class Polinomio {
 	// almacenando las potencias de X ya calculadas
 	// eficiencia O(N)
 	public double evaluarProgDinamica(double x) {
-
 		double resultado = 0;
-		double potenciaAcumalativaDeX = 1;
 
-		// O(N) N...0
-		for (int i = grado; i >= 0; i--) {
-			resultado += coeficientes[i] * potenciaAcumalativaDeX;
-			potenciaAcumalativaDeX *= x;
-		}
+		double[] potenciasDeX = new double[grado + 1];
+		potenciasDeX[grado] = 1;
+
+		// O(N)
+		for (int i = grado - 1; i >= 0; i--)
+			potenciasDeX[i] = potenciasDeX[i + 1] * x;
+
+		// O(N)
+		for (int i = 0; i < this.coeficientes.length; i++)
+			resultado += coeficientes[i] * potenciasDeX[i];
 
 		return resultado;
 	}
@@ -107,16 +110,13 @@ public class Polinomio {
 	// con la misma complejidad
 	// eficiencia O(N)
 	public double evaluarMejorada(double x) {
-
-		double resultado = coeficientes[grado];
-		double potenciaAcumalativaDeX = x;
-
-		// O(N) N-1...0
-		for (int i = grado - 1; i >= 0; i--) {
+		double resultado = 0;
+		double potenciaAcumalativaDeX = 1;
+		// O(N) N...0
+		for (int i = grado; i >= 0; i--) {
 			resultado += coeficientes[i] * potenciaAcumalativaDeX;
 			potenciaAcumalativaDeX *= x;
 		}
-
 		return resultado;
 	}
 
