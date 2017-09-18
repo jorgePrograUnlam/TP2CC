@@ -11,9 +11,10 @@ public class Main {
 
 
 	public static void main(String[] args) {
-
-		probarReslucionDePolinomio();
-		probarBinomioDeNewton();
+		
+		//probarReslucionDePolinomio();
+		//probarBinomioDeNewton();
+		
 	}
 
 	public static void probarBinomioDeNewton() {
