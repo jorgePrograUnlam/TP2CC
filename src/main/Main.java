@@ -44,7 +44,7 @@ public class Main {
 			coeficientes[i] = random.nextDouble() * random.nextInt(20) - 10;
 		}
 
-		Polinomio polinomioAleatorio = new Polinomio(grado, coeficientes);
+		Polinomio polinomioAleatorio = new Polinomio(coeficientes);
 
 		solucion = 0;
 		Calendar tiempoInicial = new GregorianCalendar();

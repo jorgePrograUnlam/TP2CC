@@ -34,7 +34,7 @@ public class BinomioDeNewton {
 			i++;
 		}
 
-		return new Polinomio(n, coeficientes);
+		return new Polinomio(coeficientes);
 
 	}
 

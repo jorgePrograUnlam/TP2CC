@@ -6,9 +6,19 @@ public class Polinomio {
 	private int grado;
 	private double[] coeficientes;
 
-	public Polinomio(int grado, double[] coeficientes) {
-		this.grado = grado;
+	public Polinomio(double[] coeficientes) {
 		this.coeficientes = coeficientes;
+		this.grado = determinarGradoPolinomio(coeficientes);
+	}
+
+	private int determinarGradoPolinomio(double[] coeficientes) {
+		int i = 0;
+		int n = this.coeficientes.length - 1;
+		while (coeficientes[i] == 0 && i < this.coeficientes.length) {
+			n--;
+			i++;
+		}
+		return n;
 	}
 
 	// eficiencia O(N^2)
