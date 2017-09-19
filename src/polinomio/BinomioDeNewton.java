@@ -22,51 +22,30 @@ public class BinomioDeNewton {
 		return r1*r2*r3;
 	}
 	 
-	// 0(n*k)
-	public double getCoeficienteKDinamicaNoRec(int k) {
-		k++;
-		
-		if(k<=0 || k > n+1  )
-			return 0;
-
-		double matrizCoeficientes[][] = new double[n+1][k];
-		
-		for(int i=0;i < n+1;i++){
-			matrizCoeficientes[i][0] = 1;
-		}
-		
-		for(int j=0;j < k && j<n+1;j++){
-			matrizCoeficientes[j][j] = 1;
-		}
-		
-		for(int i=2;i < n+1 ;i++){
-			for(int j=1;j < i && j<k ;j++) {
-				matrizCoeficientes[i][j] = matrizCoeficientes[i-1][j-1]+matrizCoeficientes[i-1][j];
-			}
-		}
-		
-		return matrizCoeficientes[n][k-1]*Math.pow(a,n+1-k)*Math.pow(b,k-1);
-	}
-	
 	
 	// O(n)?????????
 	public double getCoeficienteKDinamicaRec(int k) {
 		int i,j;
-			
-		if(k<=0 || k > n+1)
+		
+		if(k<0 || k > n)
 			return 0;
-		i=n-1;
-		j=k-1;
-			
-		double matrizCoeficientes[][] = new double[n+1][k];
-			
-		return matrizCoeficientes[n][k-1] = calculo(matrizCoeficientes,i,j);
-			
+		
+		i=n;
+		j=k;
+		
+		double matrizCoeficientes[][] = new double[n+1][k+1];
+		
+		if(j==0 || i==j) 
+			return Math.pow(a,n-k)*Math.pow(b,k);
+		
+		 return  calculo(matrizCoeficientes,i,j)*Math.pow(a,n-k)*Math.pow(b,k);
+		
 	}
 	
 	public double calculo(double mat[][],int i, int j) {
-		if(i==j || j==0) 
+		if(i==j || j==0) {
 			return mat[i][j] = 1;
+		}
 		
 		else return calculo(mat, i-1, j-1) + calculo(mat, i-1, j);
 	}
@@ -103,7 +82,7 @@ public class BinomioDeNewton {
 
 	}
 
-	public void printMatrix(double mat[][],int n, int k) {
+	public void mostrarMatriz(double mat[][],int n, int k) {
 		
 		for(int i=0 ; i<n;i++) {
 			for(int j=0 ; j<k; j++) {
