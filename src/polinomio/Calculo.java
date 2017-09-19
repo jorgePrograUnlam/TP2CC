@@ -22,6 +22,7 @@ public class Calculo {
 	}
 
 	// es recursivo
+	//O(N^2)
 	public static double combinatoriaRecursiva(int i, int j) {
 		if (i == j || j == 0) {
 			return 1;

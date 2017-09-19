@@ -23,7 +23,7 @@ public class BinomioDeNewton {
 	}
 	 
 	
-	// O(n)?????????
+	// O(n^3)
 	public double getCoeficienteKRecursiva(int k) {
 		int i,j;
 		
