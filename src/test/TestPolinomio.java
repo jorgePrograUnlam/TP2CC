@@ -8,9 +8,12 @@ import org.junit.Test;
 import polinomio.Polinomio;
 
 public class TestPolinomio {
+	private Polinomio pol;
+	private double solucion;
 
 	@Before
 	public void setUp() throws Exception {
+
 	}
 
 	@Test
@@ -50,9 +53,6 @@ public class TestPolinomio {
 	@Test
 	public void evaluarMSucesivas() {
 
-		Polinomio pol;
-		double solucion;
-
 		pol = new Polinomio(new double[]{1, 2, 3});
 		solucion = pol.evaluarMSucesivas(5);
 
@@ -77,6 +77,23 @@ public class TestPolinomio {
 		solucion = pol.evaluarMSucesivas(2.2);
 
 		Assert.assertTrue(-1.4306083186649603E6 == solucion);
+
+
+
+	}
+
+	@Test
+	public void todosLosMetedosResuelvenIgual() {
+		pol = new Polinomio(new double[]{255.256, -256.15, 8.95, 7888.125, 456258.159, -11111.9});
+		solucion = pol.evaluarHorner(0.6);
+
+		Assert.assertEquals(265471.30526656, pol.evaluarMSucesivas(0.6), 0.00000001);
+		Assert.assertEquals(265471.30526656, pol.evaluarRecursiva(0.6), 0.00000001);
+		Assert.assertEquals(265471.30526656, pol.evaluarRecursivaPar(0.6), 0.00000001);
+		Assert.assertEquals(265471.30526656, pol.evaluarProgDinamica(0.6), 0.00000001);
+		Assert.assertEquals(265471.30526656, pol.evaluarMejorada(0.6), 0.00000001);
+		Assert.assertEquals(265471.30526656, pol.evaluarPow(0.6), 0.00000001);
+		Assert.assertEquals(265471.30526656, pol.evaluarHorner(0.6), 0.00000001);
 
 	}
 
