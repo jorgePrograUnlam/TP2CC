@@ -7,21 +7,29 @@ public class Polinomio {
 	private double[] coeficientes;
 
 	public Polinomio(double[] coeficientes) {
-		this.coeficientes = coeficientes;
-		this.grado = determinarGradoPolinomio(coeficientes);
-	}
 
-	private int determinarGradoPolinomio(double[] coeficientes) {
-		if (this.coeficientes.length == 0)
-			return 0;
+		if (coeficientes.length == 0) {
+			this.grado = 0;
+			this.coeficientes = new double[this.grado + 1];
+			return;
+		}
 
 		int i = 0;
-		int n = this.coeficientes.length - 1;
-		while (n > 0 && coeficientes[i] == 0 && i < this.coeficientes.length) {
+		int n = coeficientes.length - 1;
+		while (n > 0 && coeficientes[i] == 0 && i < coeficientes.length) {
 			n--;
 			i++;
 		}
-		return n;
+
+		this.grado = n;
+		this.coeficientes = new double[this.grado + 1];
+
+		int j = 0;
+		for (; i < coeficientes.length; i++) {
+			this.coeficientes[j] = coeficientes[i];
+			j++;
+		}
+
 	}
 
 	public int getGrado() {
