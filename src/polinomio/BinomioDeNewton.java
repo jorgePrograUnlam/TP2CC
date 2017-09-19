@@ -36,6 +36,7 @@ public class BinomioDeNewton {
 		if(j==0 || i==j) 
 			return Math.pow(a,n-k)*Math.pow(b,k);
 		
+		 return  calculo(i,j)*Math.pow(a,n-k)*Math.pow(b,k);
 		
 	}
 	

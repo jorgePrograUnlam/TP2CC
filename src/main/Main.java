@@ -14,13 +14,11 @@ public class Main {
 		
 		BinomioDeNewton bn = new BinomioDeNewton(2, 1, 2);
 		
-		System.out.println(bn.getCoeficienteKDinamicaRec(0));
-		System.out.println(bn.getCoeficienteKDinamicaRec(1));
-		System.out.println(bn.getCoeficienteKDinamicaRec(2));
-		System.out.println(bn.getCoeficienteKDinamicaRec(3));
-		System.out.println(bn.getCoeficienteKDinamicaRec(4));
-		System.out.println(bn.getCoeficienteKDinamicaRec(5));
-	
+		System.out.println(bn.getCoeficienteKRecursiva(0));
+		System.out.println(bn.getCoeficienteKRecursiva(1));
+		System.out.println(bn.getCoeficienteKRecursiva(2));
+		System.out.println(bn.getCoeficienteKRecursiva(3));
+		System.out.println(bn.getCoeficienteKRecursiva(4));
 		//probarReslucionDePolinomio();
 		//probarBinomioDeNewton();
 		
