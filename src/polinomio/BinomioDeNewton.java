@@ -1,7 +1,5 @@
 package polinomio;
 
-import java.util.Arrays;
-
 public class BinomioDeNewton {
 
 	// Binomio de la forma (ax + b)^n
@@ -88,6 +86,21 @@ public class BinomioDeNewton {
 
 	}
 	
+	public Polinomio getFormaPolinomica2() {
+
+		double[] coeficientes = new double[n + 1];
+
+		int i = 0;
+		// O(N)
+		for (int k = n; k >= 0; k--) {
+			coeficientes[i] = getCoeficienteKDinamicaRec(k); // O(N^2)
+			i++;
+		}
+
+		return new Polinomio(n, coeficientes);
+
+	}
+
 	public void printMatrix(double mat[][],int n, int k) {
 		
 		for(int i=0 ; i<n;i++) {
