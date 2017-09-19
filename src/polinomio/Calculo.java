@@ -20,4 +20,14 @@ public class Calculo {
 		}
 		return b[r];
 	}
+
+	// es recursivo
+	public static double combinatoriaRecursiva(int i, int j) {
+		if (i == j || j == 0) {
+			return 1;
+		}
+
+		else
+			return combinatoriaRecursiva(i - 1, j - 1) + combinatoriaRecursiva(i - 1, j);
+	}
 }

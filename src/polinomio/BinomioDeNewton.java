@@ -36,16 +36,8 @@ public class BinomioDeNewton {
 		if(j==0 || i==j) 
 			return Math.pow(a,k)*Math.pow(b,n-k);
 		
-		 return  calculo(i,j)*Math.pow(a,k)*Math.pow(b,n-k);
+		return Calculo.combinatoriaRecursiva(i, j) * Math.pow(a, k) * Math.pow(b, n - k);
 		
-	}
-	
-	public double calculo(int i, int j) {
-		if(i==j || j==0) {
-			return 1;
-		}
-		
-		else return calculo(i-1, j-1) + calculo(i-1, j);
 	}
 	
 	// no recursivo
@@ -65,7 +57,7 @@ public class BinomioDeNewton {
 
 	}
 	
-	public Polinomio getFormaPolinomica2() {
+	public Polinomio getFormaPolinomicaRecursivo() {
 
 		double[] coeficientes = new double[n + 1];
 
@@ -79,18 +71,5 @@ public class BinomioDeNewton {
 		return new Polinomio(coeficientes);
 
 	}
-
-	public void mostrarMatriz(double mat[][],int n, int k) {
-		
-		for(int i=0 ; i<n;i++) {
-			for(int j=0 ; j<k; j++) {
-				System.out.print(mat[i][j]+" ");
-			}
-			System.out.println();
-		}
-		
-		
-	}
-	
 
 }
