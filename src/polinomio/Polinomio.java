@@ -12,13 +12,20 @@ public class Polinomio {
 	}
 
 	private int determinarGradoPolinomio(double[] coeficientes) {
+		if (this.coeficientes.length == 0)
+			return 0;
+
 		int i = 0;
 		int n = this.coeficientes.length - 1;
-		while (coeficientes[i] == 0 && i < this.coeficientes.length) {
+		while (n > 0 && coeficientes[i] == 0 && i < this.coeficientes.length) {
 			n--;
 			i++;
 		}
 		return n;
+	}
+
+	public int getGrado() {
+		return grado;
 	}
 
 	// eficiencia O(N^2)
