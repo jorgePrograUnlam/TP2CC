@@ -36,6 +36,10 @@ public class Polinomio {
 		return grado;
 	}
 
+	public double[] getCoeficientes() {
+		return coeficientes;
+	}
+
 	// eficiencia O(N^2)
 	public double evaluarMSucesivas(double x) {
 
@@ -56,6 +60,7 @@ public class Polinomio {
 
 		return sumadorDeTerminos;
 	}
+
 
 	// eficiencia O(N^2)
 	public double evaluarRecursiva(double x) {
