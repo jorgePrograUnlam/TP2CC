@@ -17,8 +17,6 @@ public class Main {
 		System.out.println(bn.getCoeficienteKRecursiva(0));
 		System.out.println(bn.getCoeficienteKRecursiva(1));
 		System.out.println(bn.getCoeficienteKRecursiva(2));
-		System.out.println(bn.getCoeficienteKRecursiva(3));
-		//System.out.println(bn.getCoeficienteKRecursiva(4));
 		//probarReslucionDePolinomio();
 		//probarBinomioDeNewton();
 		
@@ -26,20 +24,16 @@ public class Main {
 
 	public static void probarBinomioDeNewton() {
 		Random random = new Random();
-		// double a = random.nextDouble() * random.nextInt(20) - 10;
-		// double b = random.nextDouble() * random.nextInt(20) - 10;
-		// int n = random.nextInt(20);
+		double a = random.nextDouble() * random.nextInt(20) - 10;
+		double b = random.nextDouble() * random.nextInt(20) - 10;
+		int n = random.nextInt(20);
 
-		double a = 2;
-		double b = 1;
-		int n = 2;
 
 		BinomioDeNewton bin1 = new BinomioDeNewton(a, b, n);
 
 		System.out.println("Binomio de newton de grado " + n + ": ");
 		Calendar tiempoInicial = new GregorianCalendar();
 		System.out.println(bin1.getFormaPolinomica());
-		System.out.println(bin1.getFormaPolinomica2());
 		Calendar tiempoFinal = new GregorianCalendar();
 
 		System.out.println(" tiempo:" + (tiempoFinal.getTimeInMillis() - tiempoInicial.getTimeInMillis())
