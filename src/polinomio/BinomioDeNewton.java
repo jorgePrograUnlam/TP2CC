@@ -24,7 +24,7 @@ public class BinomioDeNewton {
 	 
 	
 	// O(n)?????????
-	public double getCoeficienteKDinamicaRec(int k) {
+	public double getCoeficienteKRecursiva(int k) {
 		int i,j;
 		
 		if(k<0 || k > n)
@@ -33,21 +33,18 @@ public class BinomioDeNewton {
 		i=n;
 		j=k;
 		
-		double matrizCoeficientes[][] = new double[n+1][k+1];
-		
 		if(j==0 || i==j) 
 			return Math.pow(a,n-k)*Math.pow(b,k);
 		
-		 return  calculo(matrizCoeficientes,i,j)*Math.pow(a,n-k)*Math.pow(b,k);
 		
 	}
 	
-	public double calculo(double mat[][],int i, int j) {
+	public double calculo(int i, int j) {
 		if(i==j || j==0) {
-			return mat[i][j] = 1;
+			return 1;
 		}
 		
-		else return calculo(mat, i-1, j-1) + calculo(mat, i-1, j);
+		else return calculo(i-1, j-1) + calculo(i-1, j);
 	}
 	
 	// no recursivo
@@ -74,7 +71,7 @@ public class BinomioDeNewton {
 		int i = 0;
 		// O(N)
 		for (int k = n; k >= 0; k--) {
-			coeficientes[i] = getCoeficienteKDinamicaRec(k); // O(N^2)
+			coeficientes[i] = getCoeficienteKRecursiva(k); // O(N^2)
 			i++;
 		}
 
