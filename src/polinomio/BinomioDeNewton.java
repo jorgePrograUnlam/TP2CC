@@ -24,9 +24,11 @@ public class BinomioDeNewton {
 	 
 	// 0(n*k)
 	public double getCoeficienteKDinamicaNoRec(int k) {
+		k++;
+		
 		if(k<=0 || k > n+1  )
 			return 0;
-		
+
 		double matrizCoeficientes[][] = new double[n+1][k];
 		
 		for(int i=0;i < n+1;i++){
@@ -43,7 +45,7 @@ public class BinomioDeNewton {
 			}
 		}
 		
-		return matrizCoeficientes[n][k-1];
+		return matrizCoeficientes[n][k-1]*Math.pow(a,n+1-k)*Math.pow(b,k-1);
 	}
 	
 	

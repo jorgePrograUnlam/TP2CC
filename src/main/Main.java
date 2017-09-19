@@ -12,6 +12,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		BinomioDeNewton bn = new BinomioDeNewton(3, 1, 2);
+		
+		System.out.println(bn.getCoeficienteKDinamicaNoRec(2));
+		
 		//probarReslucionDePolinomio();
 		probarBinomioDeNewton();
 		
