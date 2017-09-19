@@ -31,12 +31,12 @@ public class BinomioDeNewton {
 			return 0;
 		
 		i=n;
-		j=k;
+		j=k;		
 		
 		if(j==0 || i==j) 
-			return Math.pow(a,n-k)*Math.pow(b,k);
+			return Math.pow(a,k)*Math.pow(b,n-k);
 		
-		 return  calculo(i,j)*Math.pow(a,n-k)*Math.pow(b,k);
+		 return  calculo(i,j)*Math.pow(a,k)*Math.pow(b,n-k);
 		
 	}
 	

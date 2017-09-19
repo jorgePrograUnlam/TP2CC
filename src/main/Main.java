@@ -12,13 +12,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		BinomioDeNewton bn = new BinomioDeNewton(2, 1, 2);
+		BinomioDeNewton bn = new BinomioDeNewton(2, 1, 3);
 		
 		System.out.println(bn.getCoeficienteKRecursiva(0));
 		System.out.println(bn.getCoeficienteKRecursiva(1));
 		System.out.println(bn.getCoeficienteKRecursiva(2));
 		System.out.println(bn.getCoeficienteKRecursiva(3));
-		System.out.println(bn.getCoeficienteKRecursiva(4));
+		//System.out.println(bn.getCoeficienteKRecursiva(4));
 		//probarReslucionDePolinomio();
 		//probarBinomioDeNewton();
 		
