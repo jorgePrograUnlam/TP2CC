@@ -15,6 +15,11 @@ public class TestPolinomio {
 	public void setUp() throws Exception {
 
 	}
+	
+	@Test
+	public void queNoSeConsiderenLosCerosUbicadosAlprincipioDelPolinomio(){
+		Assert.assertEquals(2,new Polinomio(new double []{0,0,1,1,1}).getGrado());
+	}
 
 	@Test
 	public void polinomioGrado5() {

@@ -19,7 +19,7 @@ public class Polinomio {
 		while (n > 0 && coeficientes[i] == 0 && i < coeficientes.length) {
 			n--;
 			i++;
-		}
+		}//evalua el caso de que se hayan ingresado 0 en las primeras posiciones del vector de coeficientes
 
 		this.grado = n;
 		this.coeficientes = new double[this.grado + 1];
@@ -28,7 +28,7 @@ public class Polinomio {
 		for (; i < coeficientes.length; i++) {
 			this.coeficientes[j] = coeficientes[i];
 			j++;
-		}
+		}//reacomoda el vector de coef
 
 	}
 
@@ -46,7 +46,7 @@ public class Polinomio {
 		double sumadorDeTerminos = 0;
 
 		// O(N) 0...N
-		for (int i = 0; i < this.coeficientes.length; i++) {
+		for (int i = 0; i <= this.grado; i++) {
 
 			double potenciaDeX = 1;
 
@@ -68,7 +68,7 @@ public class Polinomio {
 		double sumadorDeTerminos = 0;
 
 		// O(N) 0...N
-		for (int i = 0; i < this.coeficientes.length; i++) {
+		for (int i = 0; i <= this.grado; i++) {
 
 			// O(N) N...0
 			sumadorDeTerminos += this.coeficientes[i] * potencia(x, this.grado - i);
@@ -113,7 +113,7 @@ public class Polinomio {
 		if (grado % 2 == 0)
 			return potenciaPar(x * x, grado / 2);
 
-		// O(N)
+		// O(1)
 		return x * potenciaPar(x, grado - 1);
 	}
 
@@ -130,7 +130,7 @@ public class Polinomio {
 			potenciasDeX[i] = potenciasDeX[i + 1] * x;
 
 		// O(N)
-		for (int i = 0; i < this.coeficientes.length; i++)
+		for (int i = 0; i <= this.grado; i++)
 			resultado += coeficientes[i] * potenciasDeX[i];
 
 		return resultado;
@@ -169,7 +169,7 @@ public class Polinomio {
 	public double evaluarHorner(double x) {
 
 		double resultado = 0;
-		for (int i = 0; i < this.coeficientes.length; i++)
+		for (int i = 0; i <= this.grado; i++)
 			resultado = resultado * x + coeficientes[i];
 		return resultado;
 	}
