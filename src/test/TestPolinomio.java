@@ -86,7 +86,187 @@ public class TestPolinomio {
 
 
 	}
+	
+	@Test
+	public void evaluarRecursiva() {
 
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarRecursiva(5);
+
+		Assert.assertTrue(38 == solucion);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarRecursiva(7);
+
+		Assert.assertTrue(9 == solucion);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarRecursiva(1);
+
+		Assert.assertTrue(-1.5 == solucion);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarRecursiva(2.2);
+
+		Assert.assertTrue(5.126 == solucion);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarRecursiva(2.2);
+
+		Assert.assertTrue(-1.4306083186649603E6 == solucion);
+
+	}
+	
+	@Test
+	public void evaluarRecursivaPar() {
+
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarRecursivaPar(5);
+
+		Assert.assertTrue(38 == solucion);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarRecursivaPar(7);
+
+		Assert.assertTrue(9 == solucion);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarRecursivaPar(1);
+
+		Assert.assertTrue(-1.5 == solucion);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarRecursivaPar(2.2);
+
+		Assert.assertTrue(5.126 == solucion);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarRecursivaPar(2.2);
+
+		Assert.assertTrue(-1.4306083186649603E6 == solucion);
+
+	}
+	
+	@Test
+	public void evaluarProgramacionDinamica() {
+
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarProgDinamica(5);
+
+		Assert.assertTrue(38 == solucion);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarProgDinamica(7);
+
+		Assert.assertTrue(9 == solucion);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarProgDinamica(1);
+
+		Assert.assertTrue(-1.5 == solucion);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarProgDinamica(2.2);
+
+		Assert.assertTrue(5.126 == solucion);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarProgDinamica(2.2);
+
+		Assert.assertTrue(-1.4306083186649603E6 == solucion);
+
+	}
+	
+	@Test
+	public void evaluarDinamicaMejorada() {
+
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarMejorada(5);
+
+		Assert.assertEquals(38 , solucion ,0.00000001);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarMejorada(7);
+
+		Assert.assertEquals(9 , solucion ,0.00000001);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarMejorada(1);
+
+		Assert.assertEquals(-1.5 , solucion, 0.00000001);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarMejorada(2.2);
+
+		Assert.assertEquals(5.126 , solucion ,0.00000001);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarMejorada(2.2);
+
+		Assert.assertEquals(-1.4306083186649603E6 , solucion ,0.00000001);
+
+	}
+	
+	@Test
+	public void evaluarPow() {
+
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarPow(5);
+
+		Assert.assertTrue(38 == solucion);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarPow(7);
+
+		Assert.assertTrue(9 == solucion);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarPow(1);
+
+		Assert.assertTrue(-1.5 == solucion);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarPow(2.2);
+
+		Assert.assertTrue(5.126 == solucion);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarPow(2.2);
+
+		Assert.assertTrue(-1.4306083186649603E6 == solucion);
+
+	}
+
+	@Test
+	public void evaluarHorner() {
+
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarHorner(5);
+
+		Assert.assertTrue(38 == solucion);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarHorner(7);
+
+		Assert.assertTrue(9 == solucion);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarHorner(1);
+
+		Assert.assertTrue(-1.5 == solucion);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarHorner(2.2);
+
+		Assert.assertTrue(5.126 == solucion);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarHorner(2.2);
+
+		Assert.assertEquals(-1.4306083186649603E6 , solucion, 0.00000001);
+
+	}
+	
 	@Test
 	public void todosLosMetedosResuelvenIgual() {
 		pol = new Polinomio(new double[]{255.256, -256.15, 8.95, 7888.125, 456258.159, -11111.9});
