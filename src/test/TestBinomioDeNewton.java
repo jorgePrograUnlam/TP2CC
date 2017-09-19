@@ -1,6 +1,5 @@
 package test;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +11,6 @@ public class TestBinomioDeNewton {
 
 	@Test
 	public void probarMetedoDeBinomio() {
-		Assert.fail("Not yet implemented");
 	}
 
 }

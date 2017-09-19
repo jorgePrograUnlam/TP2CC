@@ -48,12 +48,36 @@ public class TestPolinomio {
 	}
 
 	@Test
-	public void evaluarEnCeroMSucesivas() {
+	public void evaluarMSucesivas() {
 
-		Polinomio pol = new Polinomio(new double[]{2, 7, -5});
-		double solucion = pol.evaluarMSucesivas(0);
+		Polinomio pol;
+		double solucion;
 
-		Assert.assertEquals(-5, solucion, 0.0f);
+		pol = new Polinomio(new double[]{1, 2, 3});
+		solucion = pol.evaluarMSucesivas(5);
+
+		Assert.assertTrue(38 == solucion);
+
+		pol = new Polinomio(new double[]{0, 1, 2});
+		solucion = pol.evaluarMSucesivas(7);
+
+		Assert.assertTrue(9 == solucion);
+
+		pol = new Polinomio(new double[]{2.6, 1.1, -5.2});
+		solucion = pol.evaluarMSucesivas(1);
+
+		Assert.assertTrue(-1.5 == solucion);
+
+		pol = new Polinomio(new double[]{2.15, 1.1, -7.7});
+		solucion = pol.evaluarMSucesivas(2.2);
+
+		Assert.assertTrue(5.126 == solucion);
+
+		pol = new Polinomio(new double[]{-10357.303, -24831.97, -23814.181, -11419.055,-2737.755,-262.554 });
+		solucion = pol.evaluarMSucesivas(2.2);
+
+		Assert.assertTrue(-1.4306083186649603E6 == solucion);
+
 	}
 
 }
