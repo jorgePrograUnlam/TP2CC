@@ -32,10 +32,7 @@ public class BinomioDeNewton {
 		
 		i=n;
 		j=k;		
-		
-		if(j==0 || i==j) 
-			return Math.pow(a,k)*Math.pow(b,n-k);
-		
+				
 		return Calculo.combinatoriaRecursiva(i, j) * Math.pow(a, k) * Math.pow(b, n - k);
 		
 	}
@@ -57,6 +54,8 @@ public class BinomioDeNewton {
 
 	}
 	
+	
+	// O(N^4)
 	public Polinomio getFormaPolinomicaRecursivo() {
 
 		double[] coeficientes = new double[n + 1];
@@ -64,7 +63,7 @@ public class BinomioDeNewton {
 		int i = 0;
 		// O(N)
 		for (int k = n; k >= 0; k--) {
-			coeficientes[i] = getCoeficienteKRecursiva(k); // O(N^2)
+			coeficientes[i] = getCoeficienteKRecursiva(k); // O(N^3)
 			i++;
 		}
 

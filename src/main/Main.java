@@ -21,7 +21,7 @@ public class Main {
 		Random random = new Random();
 		double a = random.nextDouble() * random.nextInt(20) - 10;
 		double b = random.nextDouble() * random.nextInt(20) - 10;
-		int n = random.nextInt(30);
+		int n = random.nextInt(10);
 
 
 		BinomioDeNewton bin1 = new BinomioDeNewton(a, b, n);
