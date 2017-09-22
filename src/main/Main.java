@@ -21,19 +21,19 @@ public class Main {
 		Random random = new Random();
 		double a = random.nextDouble() * random.nextInt(20) - 10;
 		double b = random.nextDouble() * random.nextInt(20) - 10;
-		int n = random.nextInt(10);
+		int n = random.nextInt(30);
 
 
 		BinomioDeNewton bin1 = new BinomioDeNewton(a, b, n);
 
-		System.out.println("Binomio de newton de grado " + n + ": ");
+		System.out.println("Binomio de newton de grado " + n + ": NO RECURSIVO");
 		Calendar tiempoInicial = new GregorianCalendar();
 		System.out.println(bin1.getFormaPolinomica());
 		Calendar tiempoFinal = new GregorianCalendar();
 		System.out.println(
 				" tiempo:" + (tiempoFinal.getTimeInMillis() - tiempoInicial.getTimeInMillis()) + " binomio newton desarrollo: n^" + n);
 
-		System.out.println("Binomio de newton de grado " + n + ": ");
+		System.out.println("Binomio de newton de grado " + n + ": RECURSIVO");
 		tiempoInicial = new GregorianCalendar();
 		System.out.println(bin1.getFormaPolinomicaRecursivo());
 		tiempoFinal = new GregorianCalendar();
